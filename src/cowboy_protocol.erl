@@ -493,7 +493,7 @@ resume(State, Env, Tail, Module, Function, Args) ->
 -spec next_request(cowboy_req:req(), #state{}, any()) -> ok.
 next_request(Req, State=#state{req_keepalive=Keepalive, timeout=Timeout},
 		HandlerRes) ->
-	cowboy_req:ensure_response(Req, 204),
+	%%cowboy_req:ensure_response(Req, 204),
 	%% If we are going to close the connection,
 	%% we do not want to attempt to skip the body.
 	case cowboy_req:get(connection, Req) of
